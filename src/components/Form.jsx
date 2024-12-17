@@ -1,12 +1,12 @@
+
 // Componente Form
-export function Form({ inpValue, callbackOnChange }) {
+export function Form({ inpValue, callbackOnChange,callbackArray }) {
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        console.log("Ho cliccato submit");
-        // Devo richiamare un componente al submit del form
-        <h1>{inpValue}</h1>
+        console.log("Ho cliccato submit e aggiorno arrayState");
+        callbackArray(inpValue)
       }}
     >
       <div className="form-group">
@@ -24,7 +24,6 @@ export function Form({ inpValue, callbackOnChange }) {
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
-      <h3>{inpValue}</h3>
     </form>
   );
 }
