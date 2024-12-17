@@ -22,9 +22,9 @@ function App() {
     setarrayCard(newArray);
   };
 
-  const callbackArrayStateRimuovi = (elementoRimosso) => {
+  const callbackArrayStateRimuovi = (indiceElementoRimosso) => {
     const newArray = arrayCard.filter(
-      (currElement) => currElement !== elementoRimosso
+      (currElement,currIndex) => currIndex !== indiceElementoRimosso
     );
     setarrayCard(newArray);
   };
@@ -44,7 +44,7 @@ function App() {
           <Card
             key={currIndex}
             titolo={currElement}
-            funzioneModifica={() => callbackArrayStateRimuovi(currElement)}
+            funzioneModifica={() => callbackArrayStateRimuovi(currIndex)}
           />
         ))}
     </div>
@@ -52,3 +52,5 @@ function App() {
 }
 
 export default App;
+
+// Devo rimuovere elemento dell'array tramite indice 
